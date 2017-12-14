@@ -1,0 +1,13 @@
+D:\LuckyDraw_TTS\LuckyDraw_TTS\obj\Debug\LuckyDraw_TTS.frmControlPanel.resources
+D:\LuckyDraw_TTS\LuckyDraw_TTS\obj\Debug\LuckyDraw_TTS.frmDraw.resources
+D:\LuckyDraw_TTS\LuckyDraw_TTS\obj\Debug\LuckyDraw_TTS.Properties.Resources.resources
+D:\LuckyDraw_TTS\LuckyDraw_TTS\obj\Debug\LuckyDraw_TTS.csproj.GenerateResource.Cache
+D:\LuckyDraw_TTS\LuckyDraw_TTS\bin\Debug\LuckyDraw_TTS.exe
+D:\LuckyDraw_TTS\LuckyDraw_TTS\bin\Debug\LuckyDraw_TTS.pdb
+D:\LuckyDraw_TTS\LuckyDraw_TTS\obj\Debug\LuckyDraw_TTS.exe
+D:\LuckyDraw_TTS\LuckyDraw_TTS\obj\Debug\LuckyDraw_TTS.pdb
+D:\LuckyDraw_TTS\LuckyDraw_TTS\bin\Debug\LuckyDraw_TTS.exe.config
+D:\LuckyDraw_TTS\LuckyDraw_TTS\obj\Debug\LuckyDraw_TTS.WinnerBox.resources
+D:\LuckyDraw_TTS\LuckyDraw_TTS\obj\Debug\LuckyDraw_TTS.ArcherGrid.resources
+D:\LuckyDraw_TTS\LuckyDraw_TTS\obj\Debug\LuckyDraw_TTS.frmListing.resources
+D:\LuckyDraw_TTS\LuckyDraw_TTS\obj\Debug\LuckyDraw_TTS.csprojResolveAssemblyReference.cache

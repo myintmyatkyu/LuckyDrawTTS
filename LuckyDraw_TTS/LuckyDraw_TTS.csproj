@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73F2C95D-105A-4C35-ACA7-DC22AE9135EC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LuckyDraw_TTS</RootNamespace>
+    <AssemblyName>LuckyDraw_TTS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArcherGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ArcherGrid.Designer.cs">
+      <DependentUpon>ArcherGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd.cs" />
+    <Compile Include="frmControlPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmControlPanel.Designer.cs">
+      <DependentUpon>frmControlPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDraw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDraw.Designer.cs">
+      <DependentUpon>frmDraw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListing.Designer.cs">
+      <DependentUpon>frmListing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IRefresh.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinnerBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinnerBox.Designer.cs">
+      <DependentUpon>WinnerBox.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ArcherGrid.resx">
+      <DependentUpon>ArcherGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmControlPanel.resx">
+      <DependentUpon>frmControlPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDraw.resx">
+      <DependentUpon>frmDraw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListing.resx">
+      <DependentUpon>frmListing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="WinnerBox.resx">
+      <DependentUpon>WinnerBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\BG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Lubrex_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Tip_Top_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\BG_List.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Prizes\MC-Apache160 - 1094 x 379.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Prizes\MC-Apache200EFI - 1094 x 379.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Prizes\MC-NeoCW - 1094 x 379.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Prizes\MC-RockzCWRefresh - 1094 x 379.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Prizes\SS-A72017 - 1094 x 379.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Prizes\SS-J2Prime - 1094 x 379.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Prizes\SS-J5Pro - 1094 x 379.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Prizes\SS-Xcover4 - 1094 x 379.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
