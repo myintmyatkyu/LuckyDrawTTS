@@ -52,6 +52,7 @@
             this.cmdStart = new System.Windows.Forms.Button();
             this.cmdSave = new System.Windows.Forms.Button();
             this.txtCar_1 = new System.Windows.Forms.TextBox();
+            this.cmdClose = new System.Windows.Forms.Button();
             this.wbSSGJ2Prime = new LuckyDraw_TTS.WinnerBox();
             this.wbSSGJ5Pro = new LuckyDraw_TTS.WinnerBox();
             this.wbSSGXCover4 = new LuckyDraw_TTS.WinnerBox();
@@ -65,6 +66,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmdClose);
             this.groupBox1.Controls.Add(this.cmdShowList);
             this.groupBox1.Controls.Add(this.lv);
             this.groupBox1.Controls.Add(this.cmdClose_Car);
@@ -88,9 +90,9 @@
             this.cmdShowList.BackColor = System.Drawing.Color.LightGreen;
             this.cmdShowList.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cmdShowList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdShowList.Location = new System.Drawing.Point(142, 462);
+            this.cmdShowList.Location = new System.Drawing.Point(116, 462);
             this.cmdShowList.Name = "cmdShowList";
-            this.cmdShowList.Size = new System.Drawing.Size(110, 34);
+            this.cmdShowList.Size = new System.Drawing.Size(68, 34);
             this.cmdShowList.TabIndex = 12;
             this.cmdShowList.Text = "Show List";
             this.cmdShowList.UseVisualStyleBackColor = false;
@@ -139,7 +141,7 @@
             // 
             // cmdClose_Car
             // 
-            this.cmdClose_Car.BackColor = System.Drawing.Color.LightGreen;
+            this.cmdClose_Car.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.cmdClose_Car.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cmdClose_Car.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdClose_Car.Location = new System.Drawing.Point(267, 24);
@@ -230,9 +232,9 @@
             this.cmdStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdStart.Location = new System.Drawing.Point(16, 24);
             this.cmdStart.Name = "cmdStart";
-            this.cmdStart.Size = new System.Drawing.Size(79, 34);
+            this.cmdStart.Size = new System.Drawing.Size(94, 34);
             this.cmdStart.TabIndex = 0;
-            this.cmdStart.Text = "Start";
+            this.cmdStart.Text = "Start/Refresh";
             this.cmdStart.UseVisualStyleBackColor = false;
             this.cmdStart.Click += new System.EventHandler(this.cmdStart_Click);
             // 
@@ -243,7 +245,7 @@
             this.cmdSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdSave.Location = new System.Drawing.Point(16, 462);
             this.cmdSave.Name = "cmdSave";
-            this.cmdSave.Size = new System.Drawing.Size(110, 34);
+            this.cmdSave.Size = new System.Drawing.Size(94, 34);
             this.cmdSave.TabIndex = 10;
             this.cmdSave.Text = "Save";
             this.cmdSave.UseVisualStyleBackColor = false;
@@ -260,6 +262,19 @@
             this.txtCar_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCar_1.TextChanged += new System.EventHandler(this.txtCar_1_TextChanged);
             this.txtCar_1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCar_1_KeyDown);
+            // 
+            // cmdClose
+            // 
+            this.cmdClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cmdClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cmdClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdClose.Location = new System.Drawing.Point(190, 462);
+            this.cmdClose.Name = "cmdClose";
+            this.cmdClose.Size = new System.Drawing.Size(68, 34);
+            this.cmdClose.TabIndex = 13;
+            this.cmdClose.Text = "Close List";
+            this.cmdClose.UseVisualStyleBackColor = false;
+            this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
             // 
             // wbSSGJ2Prime
             // 
@@ -350,6 +365,7 @@
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmControlPanel";
             this.Text = "Control Panel";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -380,6 +396,7 @@
         private WinnerBox wbSSGJ5Pro;
         private WinnerBox wbSSGJ2Prime;
         private System.Windows.Forms.Button cmdShowList;
+        private System.Windows.Forms.Button cmdClose;
 
     }
 }

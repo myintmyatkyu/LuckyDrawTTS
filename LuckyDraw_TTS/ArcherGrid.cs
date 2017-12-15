@@ -40,7 +40,17 @@ namespace LuckyDraw_TTS
 
         public void IRefresh()
         {
-            string FileName = this.Tag.ToString() + ".csv";
+            string FileName = "";
+            if(this.Tag.ToString().Contains("Grid2"))
+            {
+                FileName = this.Tag.ToString().Remove(23,5) + ".csv";
+            }
+            else
+            {
+                FileName = this.Tag.ToString() + ".csv";
+            }
+            
+            
             this.dgv.Rows.Clear();
             if (!File.Exists(FileName))
             {
@@ -48,12 +58,34 @@ namespace LuckyDraw_TTS
                 fs.Close();
             }
             String[] lines = File.ReadAllLines(FileName);
-            int i = 1;
-            foreach (string s in lines)
+            if(!this.Tag.ToString().Contains("Grid2") && !this.Tag.ToString().Contains("Samsung Galaxy Xcover 4"))
             {
-                this.dgv.Rows.Add(new object[] {i,s.ToString(),FileName });
-                i++;
+                int i = 1;
+                foreach (string s in lines)
+                {
+                    this.dgv.Rows.Add(new object[] { i, s.ToString(), FileName });
+                    i++;
+                }
             }
+            else if (!this.Tag.ToString().Contains("Grid2") && this.Tag.ToString().Contains("Samsung Galaxy Xcover 4"))
+            {
+                int i = 1;
+                int till=lines.Length>20?20:lines.Length;
+                for (i = 1; i <=till ; i++)
+                {
+                    this.dgv.Rows.Add(new object[] { i, lines[i-1], FileName });
+                }
+            }
+            else
+            {
+                int i = 21;
+                int till = lines.Length;
+                for (i=21; i <= till; i++)
+                {
+                    this.dgv.Rows.Add(new object[] { i, lines[i-1], FileName });
+                }
+            }
+            
         }
 
         public DataTable CreateMockupData(int rows)

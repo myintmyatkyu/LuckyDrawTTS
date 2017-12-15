@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Resources;
 using System.Reflection;
+using System.IO;
 
 namespace LuckyDraw_TTS
 {
@@ -15,11 +16,13 @@ namespace LuckyDraw_TTS
     {
         Image bgImage = global::LuckyDraw_TTS.Properties.Resources.Lubrex_Logo;
         Image bgImage2 = global::LuckyDraw_TTS.Properties.Resources.Tip_Top_Logo;
+        
         public static frmDraw _frmDraw;
         public frmDraw()
         {
             InitializeComponent();
             SetLabelBG_Transparent();
+            LoadWinningNos();
             ClearText();
             _frmDraw = this;
         }
@@ -32,27 +35,87 @@ namespace LuckyDraw_TTS
                 if(c is Label && c.Name.Contains("lbl_Left_SrNo"))
                 {
                     c.BackColor = Color.Transparent;
-                    c.Text = c.Name.Substring(("lbl_Left_SrNo_").Length, c.Name.Length - ("lbl_Left_SrNo_").Length);
+                    c.Text = "";
+                    //c.Text = c.Name.Substring(("lbl_Left_SrNo_").Length, c.Name.Length - ("lbl_Left_SrNo_").Length);
                 }
-                else if (c is Label && c.Name.Contains("lbl_Left_Winning"))
+                else if (c is Label && c.Name.Contains("lbl_Right_SrNo"))
                 {
                     c.BackColor = Color.Transparent;
+                    c.Text = "";
+                }
+
+                else if (c is Label && (c.Name.Contains("lbl_Left_Winning") || c.Name.Contains("lbl_Right_Winning")))
+                {
+                    c.BackColor = Color.Transparent;
+                    c.Text = "";
                     //c.Text = c.Name.Substring(("lbl_Left_Winning_").Length, c.Name.Length - ("lbl_Left_Winning_").Length);
 
-                    int num=rnd.Next(1, 9999999);
-                    c.Text = num.ToString().PadLeft(7, '0');
+                    //int num=rnd.Next(1, 9999999);
+                    //c.Text = num.ToString().PadLeft(7, '0');
                     
                 }
-                else if (c is Label && c.Name.Contains("lbl_Left_Prize"))
+                else if (c is Label && (c.Name.Contains("lbl_Left_Prize") || c.Name.Contains("lbl_Right_Prize")))
                 {
                     c.BackColor = Color.Transparent;
+                    c.Text = "";
                     //c.Text = c.Name.Substring(("lbl_Left_Prize_").Length, c.Name.Length - ("lbl_Left_Prize_").Length);
-                    string[] prizes = new string[] {"Apache 200","Apache 160","Rockz CW Refresh","Neo CW","Samsung Galaxy A7","Gamsung Galaxy Xcover 4","Samsung Galaxy J5 Pro","Samsung Galaxy J2 Prime" };
-                    int num = rnd2.Next(0, 8);
-                    c.Text = prizes[num];
+                    //string[] prizes = new string[] {"Apache 200","Apache 160","Rockz CW Refresh","Neo CW","Samsung Galaxy A7","Gamsung Galaxy Xcover 4","Samsung Galaxy J5 Pro","Samsung Galaxy J2 Prime" };
+                    //int num = rnd2.Next(0, 8);
+                    //c.Text = prizes[num];
                 }
             }
             lblLeftTitle.BackColor = Color.Transparent;
+        }
+
+        public void LoadWinningNos()
+        {
+            string fileName = "AllPrizes.csv";
+            if(!File.Exists(fileName))
+            {
+                FileStream fs = File.Create(fileName);
+                fs.Close();
+            }
+            String[] lines = File.ReadAllLines(fileName);
+            if(lines.Length!=0)
+            {
+                int i = 1;
+                while (i <= lines.Length)
+                {
+                    if(i<=50)
+                    {
+                        if(lines[i - 1].ToString()!="")
+                        {
+                            string Number = lines[i - 1].Split(',')[0];
+                            string Prize = lines[i - 1].Split(',')[1];
+                            Label lblSrNo = (Label)this.Controls.Find("lbl_Left_SrNo_" + i.ToString(), false)[0];
+                            Label lblWinningNo = (Label)this.Controls.Find("lbl_Left_Winning_" + i.ToString(), false)[0];
+                            Label lblPrize = (Label)this.Controls.Find("lbl_Left_Prize_" + i.ToString(), false)[0];
+
+                            lblSrNo.Text = i.ToString();
+                            lblWinningNo.Text = Number;
+                            lblPrize.Text = Prize;
+                        }
+                        
+                    }
+                    else
+                    {
+                        if(lines[i - 1].ToString()!="")
+                        {
+                            string Number = lines[i- 1].Split(',')[0];
+                            string Prize = lines[i - 1].Split(',')[1];
+                            Label lblSrNo = (Label)this.Controls.Find("lbl_Right_SrNo_" + (i-50).ToString(), false)[0];
+                            Label lblWinningNo = (Label)this.Controls.Find("lbl_Right_Winning_" + (i - 50).ToString(), false)[0];
+                            Label lblPrize = (Label)this.Controls.Find("lbl_Right_Prize_" + (i - 50).ToString(), false)[0];
+
+                            lblSrNo.Text = i.ToString();
+                            lblWinningNo.Text = Number;
+                            lblPrize.Text = Prize;
+                        }                     
+                    }
+                    i++;
+                }
+            }
+            
         }
 
         public void RefreshNumber(int textBoxNumber,string value)
@@ -77,6 +140,11 @@ namespace LuckyDraw_TTS
         {
             Image img= Image.FromFile("Prizes\\" + imageKey);
             pbPrize.Image = img;
+        }
+
+        public void ClearPrize()
+        {
+            pbPrize.Image = null;
         }
 
         private void frmDraw_Load(object sender, EventArgs e)
@@ -107,6 +175,8 @@ namespace LuckyDraw_TTS
             p6.BackgroundImage = bgImage2;
 
             pbPrize.Image = null;
+
+
         }
     }
 }

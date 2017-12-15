@@ -12,6 +12,7 @@ namespace LuckyDraw_TTS
     public partial class frmControlPanel : Form
     {
         frmDraw frmDraw;
+        frmListing frmListing;
         public frmControlPanel()
         {
             InitializeComponent();
@@ -76,15 +77,23 @@ namespace LuckyDraw_TTS
                     iRefresh.IRefresh();
                 }
             }
+            this.frmDraw.LoadWinningNos();
             MessageBox.Show("Saving Successfull");
             Clear();
-            txtCar_1.Focus();
         }
 
 
         private void cmdStart_Click(object sender, EventArgs e)
         {
-            frmDraw= new frmDraw();
+            if(this.frmDraw==null)
+            {
+                this.frmDraw = new frmDraw();
+            }
+            if(this.frmDraw.IsDisposed)
+            {
+                this.frmDraw = new frmDraw();
+            }
+            
             frmDraw.Show();
         }
 
@@ -99,8 +108,11 @@ namespace LuckyDraw_TTS
 
         private void cmdShowList_Click(object sender, EventArgs e)
         {
-            frmListing frm = new frmListing();
-            frm.Show();
+            if(frmListing==null)
+            {
+                frmListing = new frmListing();
+                frmListing.Show();
+            }
         }
 
         private void cmdClose_Car_Click(object sender, EventArgs e)
@@ -114,7 +126,6 @@ namespace LuckyDraw_TTS
         private void cmdClear_Click(object sender, EventArgs e)
         {
             Clear();
-            txtCar_1.Focus();
         }
 
         public void Clear()
@@ -125,6 +136,14 @@ namespace LuckyDraw_TTS
             txtCar_4.Clear();
             txtCar_5.Clear();
             txtCar_6.Clear();
+            foreach(ListViewItem item in this.lv.SelectedItems)
+            {
+                item.Selected = false;
+                item.Focused = false;
+            }
+            frmDraw.ClearText();
+            frmDraw.ClearPrize();
+            txtCar_1.Focus();
             
         }
 
@@ -132,7 +151,7 @@ namespace LuckyDraw_TTS
         {
             if(lv.SelectedItems.Count>0)
             {
-                frmDraw._frmDraw.ShowPrize(lv.SelectedItems[0].ImageKey);
+                frmDraw.ShowPrize(lv.SelectedItems[0].ImageKey);
             }
 
         }
@@ -148,6 +167,15 @@ namespace LuckyDraw_TTS
                     IRefreshable iRefresh = (IRefreshable)wb;
                     iRefresh.IRefresh();
                 }
+            }
+        }
+
+        private void cmdClose_Click(object sender, EventArgs e)
+        {
+            if(frmListing!=null)
+            {
+                frmListing.Close();
+                frmListing = null;
             }
         }
     }

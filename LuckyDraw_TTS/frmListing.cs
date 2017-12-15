@@ -44,7 +44,7 @@ namespace LuckyDraw_TTS
             dgvSSGXCover.Tag = "Samsung Galaxy Xcover 4";
 
             dgvSSGXCover2.Text = "Samsung Galaxy Xcover 4";
-            dgvSSGXCover2.Tag = "Samsung Galaxy Xcover 4";
+            dgvSSGXCover2.Tag = "Samsung Galaxy Xcover 4Grid2";
 
             //dgvApache200.IRefresh(1);
             //dgvApache160.IRefresh(1);
