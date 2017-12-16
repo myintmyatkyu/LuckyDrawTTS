@@ -39,6 +39,7 @@
             System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Samsung Galaxy J2 Prime", "SS-J2Prime - 1094 x 379.png");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmControlPanel));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmdClose = new System.Windows.Forms.Button();
             this.cmdShowList = new System.Windows.Forms.Button();
             this.lv = new System.Windows.Forms.ListView();
             this.iml = new System.Windows.Forms.ImageList(this.components);
@@ -52,7 +53,6 @@
             this.cmdStart = new System.Windows.Forms.Button();
             this.cmdSave = new System.Windows.Forms.Button();
             this.txtCar_1 = new System.Windows.Forms.TextBox();
-            this.cmdClose = new System.Windows.Forms.Button();
             this.wbSSGJ2Prime = new LuckyDraw_TTS.WinnerBox();
             this.wbSSGJ5Pro = new LuckyDraw_TTS.WinnerBox();
             this.wbSSGXCover4 = new LuckyDraw_TTS.WinnerBox();
@@ -85,6 +85,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // cmdClose
+            // 
+            this.cmdClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cmdClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cmdClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdClose.Location = new System.Drawing.Point(190, 462);
+            this.cmdClose.Name = "cmdClose";
+            this.cmdClose.Size = new System.Drawing.Size(68, 34);
+            this.cmdClose.TabIndex = 13;
+            this.cmdClose.Text = "Close List";
+            this.cmdClose.UseVisualStyleBackColor = false;
+            this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
+            // 
             // cmdShowList
             // 
             this.cmdShowList.BackColor = System.Drawing.Color.LightGreen;
@@ -101,10 +114,10 @@
             // lv
             // 
             this.lv.Activation = System.Windows.Forms.ItemActivation.OneClick;
-            listViewItem1.Tag = "Apache 200 EFI";
-            listViewItem2.Tag = "Apache 160";
-            listViewItem3.Tag = "Rockz CW Refresh";
-            listViewItem4.Tag = "Neo CW";
+            listViewItem1.Tag = "Apache RTR 200 CC";
+            listViewItem2.Tag = "Apache RTR 160 CC";
+            listViewItem3.Tag = "Rockz Refresh CW 125 CC";
+            listViewItem4.Tag = "Neo CW 110 CC";
             listViewItem5.Tag = "Samsung Galaxy A7";
             listViewItem6.Tag = "Samsung Galaxy Xcover 4";
             listViewItem7.Tag = "Samsung Galaxy J5 Pro";
@@ -262,19 +275,6 @@
             this.txtCar_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCar_1.TextChanged += new System.EventHandler(this.txtCar_1_TextChanged);
             this.txtCar_1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCar_1_KeyDown);
-            // 
-            // cmdClose
-            // 
-            this.cmdClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cmdClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.cmdClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdClose.Location = new System.Drawing.Point(190, 462);
-            this.cmdClose.Name = "cmdClose";
-            this.cmdClose.Size = new System.Drawing.Size(68, 34);
-            this.cmdClose.TabIndex = 13;
-            this.cmdClose.Text = "Close List";
-            this.cmdClose.UseVisualStyleBackColor = false;
-            this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
             // 
             // wbSSGJ2Prime
             // 

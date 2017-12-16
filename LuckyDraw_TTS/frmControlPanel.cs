@@ -17,16 +17,16 @@ namespace LuckyDraw_TTS
         {
             InitializeComponent();
             wbApache200.Text = "Apache 200";
-            wbApache200.Tag = "Apache 200 EFI";
+            wbApache200.Tag = "Apache RTR 200 CC";
 
             wbApache160.Text = "Apache 160";
-            wbApache160.Tag = "Apache 160";
+            wbApache160.Tag = "Apache RTR 160 CC";
 
             wbRockz.Text = "Rockz CW Refresh";
-            wbRockz.Tag = "Rockz CW Refresh";
+            wbRockz.Tag = "Rockz Refresh CW 125 CC";
 
             wbNeo.Text = "Neo CW";
-            wbNeo.Tag = "Neo CW";
+            wbNeo.Tag = "Neo CW 110 CC";
 
             wbSSGA7.Text = "Samsung Galaxy A7";
             wbSSGA7.Tag = "Samsung Galaxy A7";

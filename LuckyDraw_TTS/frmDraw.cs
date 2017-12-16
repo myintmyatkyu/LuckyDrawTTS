@@ -65,6 +65,7 @@ namespace LuckyDraw_TTS
                 }
             }
             lblLeftTitle.BackColor = Color.Transparent;
+            lblRightTitle.BackColor = Color.Transparent;
         }
 
         public void LoadWinningNos()
@@ -81,7 +82,7 @@ namespace LuckyDraw_TTS
                 int i = 1;
                 while (i <= lines.Length)
                 {
-                    if(i<=50)
+                    if(i<=53)
                     {
                         if(lines[i - 1].ToString()!="")
                         {
@@ -103,9 +104,9 @@ namespace LuckyDraw_TTS
                         {
                             string Number = lines[i- 1].Split(',')[0];
                             string Prize = lines[i - 1].Split(',')[1];
-                            Label lblSrNo = (Label)this.Controls.Find("lbl_Right_SrNo_" + (i-50).ToString(), false)[0];
-                            Label lblWinningNo = (Label)this.Controls.Find("lbl_Right_Winning_" + (i - 50).ToString(), false)[0];
-                            Label lblPrize = (Label)this.Controls.Find("lbl_Right_Prize_" + (i - 50).ToString(), false)[0];
+                            Label lblSrNo = (Label)this.Controls.Find("lbl_Right_SrNo_" + (i-53).ToString(), false)[0];
+                            Label lblWinningNo = (Label)this.Controls.Find("lbl_Right_Winning_" + (i - 53).ToString(), false)[0];
+                            Label lblPrize = (Label)this.Controls.Find("lbl_Right_Prize_" + (i - 53).ToString(), false)[0];
 
                             lblSrNo.Text = i.ToString();
                             lblWinningNo.Text = Number;
@@ -167,11 +168,11 @@ namespace LuckyDraw_TTS
             lblNo_5.Text = "";
             lblNo_6.Text = "";
 
-            p1.BackgroundImage = bgImage2;
+            p1.BackgroundImage = bgImage;
             p2.BackgroundImage = bgImage2;
-            p3.BackgroundImage = bgImage2;
+            p3.BackgroundImage = bgImage;
             p4.BackgroundImage = bgImage2;
-            p5.BackgroundImage = bgImage2;
+            p5.BackgroundImage = bgImage;
             p6.BackgroundImage = bgImage2;
 
             pbPrize.Image = null;

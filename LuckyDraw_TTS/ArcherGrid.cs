@@ -58,33 +58,90 @@ namespace LuckyDraw_TTS
                 fs.Close();
             }
             String[] lines = File.ReadAllLines(FileName);
-            if(!this.Tag.ToString().Contains("Grid2") && !this.Tag.ToString().Contains("Samsung Galaxy Xcover 4"))
+            if (!this.Tag.ToString().Contains("Grid2"))
             {
-                int i = 1;
-                foreach (string s in lines)
+                if (this.Text.Contains("Samsung Galaxy Xcover 4"))
                 {
-                    this.dgv.Rows.Add(new object[] { i, s.ToString(), FileName });
-                    i++;
+                    //Bind XCover Grid1
+                    int i = 1;
+                    int till = lines.Length > 20 ? 20 : lines.Length;
+                    for (i = 1; i <= till; i++)
+                    {
+                        this.dgv.Rows.Add(new object[] { i, lines[i - 1], FileName });
+                    }
                 }
-            }
-            else if (!this.Tag.ToString().Contains("Grid2") && this.Tag.ToString().Contains("Samsung Galaxy Xcover 4"))
-            {
-                int i = 1;
-                int till=lines.Length>20?20:lines.Length;
-                for (i = 1; i <=till ; i++)
+                else if (this.Text.Contains("Samsung Galaxy J2 Prime"))
                 {
-                    this.dgv.Rows.Add(new object[] { i, lines[i-1], FileName });
+                    //Bind Prime Grid 1
+                    int i = 1;
+                    int till = lines.Length > 5 ? 5 : lines.Length;
+                    for (i = 1; i <= till; i++)
+                    {
+                        this.dgv.Rows.Add(new object[] { i, lines[i - 1], FileName });
+                    }
+                }
+                else //Bind other normal grids
+                {
+                    int i = 1;
+                    foreach (string s in lines)
+                    {
+                        this.dgv.Rows.Add(new object[] { i, s.ToString(), FileName });
+                        i++;
+                    }
                 }
             }
             else
             {
-                int i = 21;
-                int till = lines.Length;
-                for (i=21; i <= till; i++)
+                if (this.Text.Contains("Samsung Galaxy Xcover 4"))
                 {
-                    this.dgv.Rows.Add(new object[] { i, lines[i-1], FileName });
+                    //Bind XCover Grid2
+                    int i = 21;
+                    int till = lines.Length;
+                    for (i = 21; i <= till; i++)
+                    {
+                        this.dgv.Rows.Add(new object[] { i, lines[i - 1], FileName });
+                    }
                 }
+                else if (this.Text.Contains("Samsung Galaxy J2 Prime"))
+                {
+                    //Bind Prime Grid 2
+                    int i = 6;
+                    int till = lines.Length;
+                    for (i = 6; i <= till; i++)
+                    {
+                        this.dgv.Rows.Add(new object[] { i, lines[i - 1], FileName });
+                    }
+                }
+
             }
+
+            //if(!this.Tag.ToString().Contains("Grid2") && !this.Tag.ToString().Contains("Samsung Galaxy Xcover 4"))
+            //{
+            //    int i = 1;
+            //    foreach (string s in lines)
+            //    {
+            //        this.dgv.Rows.Add(new object[] { i, s.ToString(), FileName });
+            //        i++;
+            //    }
+            //}
+            //else if (!this.Tag.ToString().Contains("Grid2") && this.Tag.ToString().Contains("Samsung Galaxy Xcover 4"))
+            //{
+            //    int i = 1;
+            //    int till=lines.Length>20?20:lines.Length;
+            //    for (i = 1; i <=till ; i++)
+            //    {
+            //        this.dgv.Rows.Add(new object[] { i, lines[i-1], FileName });
+            //    }
+            //}
+            //else
+            //{
+            //    int i = 21;
+            //    int till = lines.Length;
+            //    for (i=21; i <= till; i++)
+            //    {
+            //        this.dgv.Rows.Add(new object[] { i, lines[i-1], FileName });
+            //    }
+            //}
             
         }
 

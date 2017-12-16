@@ -19,23 +19,26 @@ namespace LuckyDraw_TTS
 
         public void LoadWinningNos()
         {
-            dgvApache200.Text = "Apache 200";
-            dgvApache200.Tag = "Apache 200 EFI";
+            dgvApache200.Text = "Apache RTR 200 CC";
+            dgvApache200.Tag = "Apache RTR 200 CC";
 
-            dgvApache160.Text = "Apache 160";
-            dgvApache160.Tag = "Apache 160";
+            dgvApache160.Text = "Apache RTR 160 CC";
+            dgvApache160.Tag = "Apache RTR 160 CC";
 
-            dgvRockz.Text = "Rockz CW Refresh";
-            dgvRockz.Tag = "Rockz CW Refresh";
+            dgvRockz.Text = "Rockz Refresh CW 125 CC";
+            dgvRockz.Tag = "Rockz Refresh CW 125 CC";
 
-            dgvNeoCW.Text = "Neo CW";
-            dgvNeoCW.Tag = "Neo CW";
+            dgvNeoCW.Text = "Neo CW 110 CC";
+            dgvNeoCW.Tag = "Neo CW 110 CC";
 
             dgvSSGA7.Text = "Samsung Galaxy A7";
             dgvSSGA7.Tag = "Samsung Galaxy A7";
 
             dgvSSGJ2Prime.Text = "Samsung Galaxy J2 Prime";
             dgvSSGJ2Prime.Tag = "Samsung Galaxy J2 Prime";
+
+            dgvSSGJ2Prime2.Text = "Samsung Galaxy J2 Prime";
+            dgvSSGJ2Prime2.Tag = "Samsung Galaxy J2 PrimeGrid2";
 
             dgvSSGJ5Pro.Text = "Samsung Galaxy J5 Pro";
             dgvSSGJ5Pro.Tag = "Samsung Galaxy J5 Pro";
@@ -62,6 +65,7 @@ namespace LuckyDraw_TTS
             dgvNeoCW.IRefresh();
             dgvSSGA7.IRefresh();
             dgvSSGJ5Pro.IRefresh();
+            dgvSSGJ2Prime2.IRefresh();
             dgvSSGJ2Prime.IRefresh();
             dgvSSGXCover.IRefresh();
             dgvSSGXCover2.IRefresh();
